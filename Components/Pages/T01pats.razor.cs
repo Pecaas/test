@@ -38,36 +38,21 @@ namespace Medrec.Components.Pages
 
         protected RadzenDataGrid<Medrec.Models.medrec.T01pat> grid0;
 
-        private int searchVersion = 0; // identifikátor pro poslední vyhledávání
         protected string search = "";
-
-        //private string _searchInput;
-
-
-        private void ValueChanged(string args)
+        protected void OnInput(ChangeEventArgs args)
         {
-            search = args;
+            search = args.Value?.ToString() ?? "";
         }
-        //protected async Task Search(ChangeEventArgs args)
+
         protected async Task Search(KeyboardEventArgs args)
         {
             if (args.Key != "Enter") return;
 
-            //searchVersion++;
-            //var currentVersion = searchVersion;
-
-            //await Task.Delay(300);
-            //if (currentVersion != searchVersion)
-            //     return;
-
-            //search = $"{args.Value}";
-            //search = _searchInput;
-
-            //if (search.Length < 3)
-            //    return;
-
             await grid0.GoToPage(0);
-            t01pats = await medrecService.GetT01pats(new Query { Filter = $@"i => i.Persid.Contains(@0) || i.Lname.Contains(@0) || i.Iname.Contains(@0)", FilterParameters = new object[] { search } });
+            t01pats = await medrecService.GetT01pats(
+                new Query { Filter = $@"i => i.Persid.Contains(@0) || i.Lname.Contains(@0) || i.Iname.Contains(@0)", 
+                    FilterParameters = new object[] { search } });
+
             //t01pats = await medrecService.GetT01pats(search);
         }
 

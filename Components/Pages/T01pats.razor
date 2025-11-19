@@ -16,7 +16,7 @@
             </RadzenStack>
         </RadzenColumn>
     </RadzenRow>
-    <RadzenTextBox Placeholder="Search ..." style="display: block; width: 100%" ValueChanged="ValueChanged" @onkeydown="@Search" aria-label="Search by all string columns" />
+    <RadzenTextBox Placeholder="Search ..." style="display: block; width: 100%" @oninput="@OnInput" @onkeydown="@Search" aria-label="Search by all string columns" />
 
     @* <RadzenTextBox Placeholder="Search ..." style="display: block; width: 100%" @oninput="@Search" aria-label="Search by all string columns" /> *@
     <RadzenRow>
