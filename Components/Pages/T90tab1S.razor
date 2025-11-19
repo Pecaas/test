@@ -1,0 +1,89 @@
+@page "/t90tab1s"
+
+<PageTitle>T90tab1S</PageTitle>
+<RadzenStack>
+    <RadzenRow AlignItems="AlignItems.Center">
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenText Text="T90tab1S" TextStyle="TextStyle.H3" TagName="TagName.H1" style="margin: 0" />
+        </RadzenColumn>
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
+                <RadzenSplitButton Icon="get_app" Text="Export" Click="@ExportClick" Variant="Variant.Flat" Shade="Shade.Lighter">
+                    <RadzenSplitButtonItem Text="Excel" Value="xlsx" />
+                    <RadzenSplitButtonItem Text="CSV" Value="csv" />
+                </RadzenSplitButton>
+                <RadzenButton Icon="add_circle_outline" Text="Add" Click="@AddButtonClick" Variant="Variant.Flat" />
+            </RadzenStack>
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenTextBox Placeholder="Search ..." style="display: block; width: 100%" @oninput="@Search" aria-label="Search by all string columns" />
+    <RadzenRow>
+      <RadzenColumn SizeMD=12>
+        <RadzenDataGrid @ref="grid0" ColumnWidth="200px"   AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" ShowPagingSummary="true" PageSizeOptions=@(new int[]{5, 10, 20, 30})
+            Data="@(t90tab1S)" TItem="Medrec.Models.medrec.T90tab1" RowDoubleClick="@EditRow">
+            <Columns>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Serial" Title="Serial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Tab" Title="Tab">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Keycode" Title="Keycode">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Abbrev" Title="Abbrev">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Descr" Title="Descr">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Descr1" Title="Descr1">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Par01" Title="Par01">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Par02" Title="Par02">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Par03" Title="Par03">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Color" Title="Color">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Datfr" Title="Datfr">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Datto" Title="Datto">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Extid" Title="Extid">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Data1x" Title="Data1x">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Delted" Title="Delted">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Datnew" Title="Datnew">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Whonew" Title="Whonew">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Trmnew" Title="Trmnew">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Datmod" Title="Datmod">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Whomod" Title="Whomod">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Trmmod" Title="Trmmod">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Insdat" Title="Insdat">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Insver" Title="Insver">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Sysdat" Title="Sysdat">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Property="Sysver" Title="Sysver">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T90tab1" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+                    <Template Context="t90tab1">
+
+                        <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Size="ButtonSize.Medium"
+                            Shade="Shade.Lighter" Variant="Variant.Flat"
+                            Click=@(args => GridDeleteButtonClick(args, t90tab1)) @onclick:stopPropagation="true" />
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+
+        </RadzenDataGrid>
+
+    </RadzenColumn>
+  </RadzenRow>
+</RadzenStack>

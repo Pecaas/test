@@ -1,0 +1,127 @@
+@page "/t02measures"
+
+<PageTitle>T02measures</PageTitle>
+<RadzenStack>
+    <RadzenRow AlignItems="AlignItems.Center">
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenText Text="T02measures" TextStyle="TextStyle.H3" TagName="TagName.H1" style="margin: 0" />
+        </RadzenColumn>
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
+                <RadzenSplitButton Icon="get_app" Text="Export" Click="@ExportClick" Variant="Variant.Flat" Shade="Shade.Lighter">
+                    <RadzenSplitButtonItem Text="Excel" Value="xlsx" />
+                    <RadzenSplitButtonItem Text="CSV" Value="csv" />
+                </RadzenSplitButton>
+                <RadzenButton Icon="add_circle_outline" Text="Add" Click="@AddButtonClick" Variant="Variant.Flat" />
+            </RadzenStack>
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenTextBox Placeholder="Search ..." style="display: block; width: 100%" @oninput="@Search" aria-label="Search by all string columns" />
+    <RadzenRow>
+      <RadzenColumn SizeMD=12>
+        <RadzenDataGrid @ref="grid0" ColumnWidth="200px"   AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" ShowPagingSummary="true" PageSizeOptions=@(new int[]{5, 10, 20, 30})
+            Data="@(t02measures)" TItem="Medrec.Models.medrec.T02measure" RowDoubleClick="@EditRow">
+            <Columns>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Serial" Title="Serial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Mednum" Title="Mednum">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Measuretype" Title="Measuretype">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Measurenum" Title="Measurenum">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Yeargen" Title="Yeargen">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Yeargenseq" Title="Yeargenseq">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Measurepar1" Title="Measurepar1">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Measurepar2" Title="Measurepar2">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Measureval" Title="Measureval">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Units" Title="Units">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Datfr" Title="Datfr">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Timfr" Title="Timfr">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Datto" Title="Datto">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Timto" Title="Timto">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Departm" Title="Departm">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Who" Title="Who">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Userid" Title="Userid">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Indiclink" Title="Indiclink">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Ownersource" Title="Ownersource">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Ownertype" Title="Ownertype">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Ownerserial" Title="Ownerserial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Ownertag" Title="Ownertag">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Indicstate" Title="Indicstate">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Indicstate1" Title="Indicstate1">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Indicuser" Title="Indicuser">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Data1x" Title="Data1x">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Metaserial" Title="Metaserial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Viewserial" Title="Viewserial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Biserial" Title="Biserial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Params" Title="Params">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Dynitems" Title="Dynitems">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Dynitemsserial" Title="Dynitemsserial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Delted" Title="Delted">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Datnew" Title="Datnew">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Whonew" Title="Whonew">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Trmnew" Title="Trmnew">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Datmod" Title="Datmod">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Whomod" Title="Whomod">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Trmmod" Title="Trmmod">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Insdat" Title="Insdat">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Insver" Title="Insver">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Sysdat" Title="Sysdat">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Sysver" Title="Sysver">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Property="Extid" Title="Extid">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02measure" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+                    <Template Context="t02measure">
+
+                        <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Size="ButtonSize.Medium"
+                            Shade="Shade.Lighter" Variant="Variant.Flat"
+                            Click=@(args => GridDeleteButtonClick(args, t02measure)) @onclick:stopPropagation="true" />
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+
+        </RadzenDataGrid>
+
+    </RadzenColumn>
+  </RadzenRow>
+</RadzenStack>

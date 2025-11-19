@@ -1,0 +1,141 @@
+@page "/t03events"
+
+<PageTitle>T03events</PageTitle>
+<RadzenStack>
+    <RadzenRow AlignItems="AlignItems.Center">
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenText Text="T03events" TextStyle="TextStyle.H3" TagName="TagName.H1" style="margin: 0" />
+        </RadzenColumn>
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
+                <RadzenSplitButton Icon="get_app" Text="Export" Click="@ExportClick" Variant="Variant.Flat" Shade="Shade.Lighter">
+                    <RadzenSplitButtonItem Text="Excel" Value="xlsx" />
+                    <RadzenSplitButtonItem Text="CSV" Value="csv" />
+                </RadzenSplitButton>
+                <RadzenButton Icon="add_circle_outline" Text="Add" Click="@AddButtonClick" Variant="Variant.Flat" />
+            </RadzenStack>
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenTextBox Placeholder="Search ..." style="display: block; width: 100%" @oninput="@Search" aria-label="Search by all string columns" />
+    <RadzenRow>
+      <RadzenColumn SizeMD=12>
+        <RadzenDataGrid @ref="grid0" ColumnWidth="200px"   AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" ShowPagingSummary="true" PageSizeOptions=@(new int[]{5, 10, 20, 30})
+            Data="@(t03events)" TItem="Medrec.Models.medrec.T03event" RowDoubleClick="@EditRow">
+            <Columns>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Serial" Title="Serial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Mednum" Title="Mednum">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Eventtype" Title="Eventtype">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Eventnum" Title="Eventnum">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Yeargen" Title="Yeargen">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Yeargenseq" Title="Yeargenseq">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Datfr" Title="Datfr">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Datto" Title="Datto">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Timfr" Title="Timfr">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Timto" Title="Timto">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Datcheck" Title="Datcheck">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Whocheck" Title="Whocheck">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Datlock" Title="Datlock">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Wholock" Title="Wholock">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Departm" Title="Departm">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Who" Title="Who">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Ownersource" Title="Ownersource">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Ownertype" Title="Ownertype">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Ownerserial" Title="Ownerserial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Ownertag" Title="Ownertag">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Schred" Title="Schred">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Schrednum" Title="Schrednum">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Userid" Title="Userid">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Indiclink" Title="Indiclink">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Indicproc" Title="Indicproc">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Extid" Title="Extid">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Indicstate" Title="Indicstate">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Indicstate1" Title="Indicstate1">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Indicuser" Title="Indicuser">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Data1x" Title="Data1x">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Metaserial" Title="Metaserial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Viewserial" Title="Viewserial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Biserial" Title="Biserial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Params" Title="Params">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Dynitems" Title="Dynitems">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Dynitemsserial" Title="Dynitemsserial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Delted" Title="Delted">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Datnew" Title="Datnew">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Whonew" Title="Whonew">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Trmnew" Title="Trmnew">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Datmod" Title="Datmod">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Whomod" Title="Whomod">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Trmmod" Title="Trmmod">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Insdat" Title="Insdat">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Insver" Title="Insver">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Sysdat" Title="Sysdat">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Sysver" Title="Sysver">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Datsee" Title="Datsee">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Timsee" Title="Timsee">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Whosee" Title="Whosee">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Property="Eventcode" Title="Eventcode">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T03event" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+                    <Template Context="t03event">
+
+                        <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Size="ButtonSize.Medium"
+                            Shade="Shade.Lighter" Variant="Variant.Flat"
+                            Click=@(args => GridDeleteButtonClick(args, t03event)) @onclick:stopPropagation="true" />
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+
+        </RadzenDataGrid>
+
+    </RadzenColumn>
+  </RadzenRow>
+</RadzenStack>

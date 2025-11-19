@@ -1,0 +1,67 @@
+@page "/versions"
+
+<PageTitle>Versions</PageTitle>
+<RadzenStack>
+    <RadzenRow AlignItems="AlignItems.Center">
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenText Text="Versions" TextStyle="TextStyle.H3" TagName="TagName.H1" style="margin: 0" />
+        </RadzenColumn>
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
+                <RadzenSplitButton Icon="get_app" Text="Export" Click="@ExportClick" Variant="Variant.Flat" Shade="Shade.Lighter">
+                    <RadzenSplitButtonItem Text="Excel" Value="xlsx" />
+                    <RadzenSplitButtonItem Text="CSV" Value="csv" />
+                </RadzenSplitButton>
+                <RadzenButton Icon="add_circle_outline" Text="Add" Click="@AddButtonClick" Variant="Variant.Flat" />
+            </RadzenStack>
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenTextBox Placeholder="Search ..." style="display: block; width: 100%" @oninput="@Search" aria-label="Search by all string columns" />
+    <RadzenRow>
+      <RadzenColumn SizeMD=12>
+        <RadzenDataGrid @ref="grid0" ColumnWidth="200px"   AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" ShowPagingSummary="true" PageSizeOptions=@(new int[]{5, 10, 20, 30})
+            Data="@(versions)" TItem="Medrec.Models.medrec.Version" RowDoubleClick="@EditRow">
+            <Columns>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Property="Projekt" Title="Projekt">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Property="System" Title="System">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Property="Server" Title="Server">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Property="Versionnum" Title="Versionnum">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Property="Sysversionnum" Title="Sysversionnum">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Property="Versiondate" Title="Versiondate">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Property="Language" Title="Language">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Property="Info" Title="Info">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Property="Createdate" Title="Createdate">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Property="Dbclosed" Title="Dbclosed">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Property="Dbdatfr" Title="Dbdatfr">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Property="Dbdatto" Title="Dbdatto">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Property="Dbtype" Title="Dbtype">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Property="Dbservertype" Title="Dbservertype">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.Version" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+                    <Template Context="version">
+
+                        <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Size="ButtonSize.Medium"
+                            Shade="Shade.Lighter" Variant="Variant.Flat"
+                            Click=@(args => GridDeleteButtonClick(args, version)) @onclick:stopPropagation="true" />
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+
+        </RadzenDataGrid>
+
+    </RadzenColumn>
+  </RadzenRow>
+</RadzenStack>

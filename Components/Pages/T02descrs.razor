@@ -1,0 +1,109 @@
+@page "/t02descrs"
+
+<PageTitle>T02descrs</PageTitle>
+<RadzenStack>
+    <RadzenRow AlignItems="AlignItems.Center">
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenText Text="T02descrs" TextStyle="TextStyle.H3" TagName="TagName.H1" style="margin: 0" />
+        </RadzenColumn>
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
+                <RadzenSplitButton Icon="get_app" Text="Export" Click="@ExportClick" Variant="Variant.Flat" Shade="Shade.Lighter">
+                    <RadzenSplitButtonItem Text="Excel" Value="xlsx" />
+                    <RadzenSplitButtonItem Text="CSV" Value="csv" />
+                </RadzenSplitButton>
+                <RadzenButton Icon="add_circle_outline" Text="Add" Click="@AddButtonClick" Variant="Variant.Flat" />
+            </RadzenStack>
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenTextBox Placeholder="Search ..." style="display: block; width: 100%" @oninput="@Search" aria-label="Search by all string columns" />
+    <RadzenRow>
+      <RadzenColumn SizeMD=12>
+        <RadzenDataGrid @ref="grid0" ColumnWidth="200px"   AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" ShowPagingSummary="true" PageSizeOptions=@(new int[]{5, 10, 20, 30})
+            Data="@(t02descrs)" TItem="Medrec.Models.medrec.T02descr" RowDoubleClick="@EditRow">
+            <Columns>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Serial" Title="Serial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Mednum" Title="Mednum">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Descrtype" Title="Descrtype">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Evidnum" Title="Evidnum">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Yeargen" Title="Yeargen">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Yeargenseq" Title="Yeargenseq">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Datfr" Title="Datfr">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Datto" Title="Datto">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Datlock" Title="Datlock">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Wholock" Title="Wholock">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Indiclink" Title="Indiclink">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Schred" Title="Schred">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Schrednum" Title="Schrednum">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Extid" Title="Extid">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Indicstate" Title="Indicstate">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Indicstate1" Title="Indicstate1">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Indicuser" Title="Indicuser">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Data1x" Title="Data1x">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Metaserial" Title="Metaserial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Viewserial" Title="Viewserial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Biserial" Title="Biserial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Params" Title="Params">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Dynitems" Title="Dynitems">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Dynitemsserial" Title="Dynitemsserial">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Delted" Title="Delted">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Datnew" Title="Datnew">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Whonew" Title="Whonew">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Trmnew" Title="Trmnew">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Datmod" Title="Datmod">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Whomod" Title="Whomod">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Trmmod" Title="Trmmod">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Insdat" Title="Insdat">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Insver" Title="Insver">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Sysdat" Title="Sysdat">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Property="Sysver" Title="Sysver">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="Medrec.Models.medrec.T02descr" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+                    <Template Context="t02descr">
+
+                        <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Size="ButtonSize.Medium"
+                            Shade="Shade.Lighter" Variant="Variant.Flat"
+                            Click=@(args => GridDeleteButtonClick(args, t02descr)) @onclick:stopPropagation="true" />
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+
+        </RadzenDataGrid>
+
+    </RadzenColumn>
+  </RadzenRow>
+</RadzenStack>
